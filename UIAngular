@@ -1,0 +1,78 @@
+let inputList = [
+    { activityName : "asdf", startTime : 1 , endTime : 4},
+    { activityName : "asdf", startTime : 5 , endTime : 6},
+    { activityName : "asdf", startTime : 5 , endTime : 7},
+    { activityName : "asdf", startTime : 9 , endTime : 13},
+    { activityName : "asdf", startTime : 11 , endTime : 15}
+]
+ 
+function intersects(e1, e2) {
+    return (e1.startTime >= e2.startTime && e1.startTime < e2.endTime) || (e2.startTime >= e1.startTime && e2.startTime < e1.endTime)
+}
+ 
+// [
+//     [{ activityName : "asdf", startTime : 1 , endTime : 4}, { activityName : "asdf", startTime : 5 , endTime : 6},{ activityName : "asdf", startTime : 9 , endTime : 13}],
+//     [{ activityName : "asdf", startTime : 5 , endTime : 7}, { activityName : "asdf", startTime : 11 , endTime : 15}]
+// ]
+ 
+let outputlist = [[]];
+for(let element of inputList) {
+    let placed = false;
+    for(let row of outputlist) {
+        let intFlag = false;
+        for(let existingElemetn of row) {
+            intFlag ||= intersects(element, existingElemetn);
+        }
+        if(!intFlag) {
+            row.push(element);
+            placed = true;
+            break;
+        }
+    }
+    if(!placed) {
+        outputlist.push([element]);
+    }
+}
+ 
+console.log(JSON.stringify(outputlist, null, 2));
+let inputList = [     { activityName : "asd... by Chaitanya Vaishampayan
+Chaitanya Vaishampayan
+18:42
+let inputList = [
+    { activityName : "asdf", startTime : 1 , endTime : 4},
+    { activityName : "asdf", startTime : 5 , endTime : 6},
+    { activityName : "asdf", startTime : 5 , endTime : 7},
+    { activityName : "asdf", startTime : 9 , endTime : 13},
+    { activityName : "asdf", startTime : 11 , endTime : 15}
+]
+ 
+function intersects(e1, e2) {
+    return (e1.startTime >= e2.startTime && e1.startTime < e2.endTime) || (e2.startTime >= e1.startTime && e2.startTime < e1.endTime)
+}
+ 
+// [
+//     [{ activityName : "asdf", startTime : 1 , endTime : 4}, { activityName : "asdf", startTime : 5 , endTime : 6},{ activityName : "asdf", startTime : 9 , endTime : 13}],
+//     [{ activityName : "asdf", startTime : 5 , endTime : 7}, { activityName : "asdf", startTime : 11 , endTime : 15}]
+// ]
+ 
+let outputlist = [[]];
+for(let element of inputList) {
+    let placed = false;
+    for(let row of outputlist) {
+        let intFlag = false;
+        for(let existingElemetn of row) {
+            intFlag ||= intersects(element, existingElemetn);
+        }
+        if(!intFlag) {
+            row.push(element);
+            placed = true;
+            break;
+        }
+    }
+    if(!placed) {
+        outputlist.push([element]);
+    }
+}
+ 
+console.log(JSON.stringify(outputlist, null, 2));
+has context menu
